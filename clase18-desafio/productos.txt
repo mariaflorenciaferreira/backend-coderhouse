@@ -1,0 +1,11 @@
+[{titulo:'Moto G60s',precio:1740,imagen:'https://http2.mlstatic.com/D_NQ_NP_966438-MLA48112811958_112021-O.webp',descripcion:'128 GB aqua 6 GB RAM',stock:8,codigoProducto:'110211'},
+{titulo:'Apple iPhone SE',precio:1682,imagen:'https://http2.mlstatic.com/D_NQ_NP_745945-MLA46552310508_062021-O.webp',descripcion:'(2da generación) 64 GB - Blanco',stock:3,codigoProducto:'110329'},
+{titulo:'Samsung Galaxy A03',precio:4299,imagen:'https://http2.mlstatic.com/D_NQ_NP_737913-MLA49433851234_032022-V.webp',descripcion:'64 GB negro 4 GB RAM',stock:3,codigoProducto:'110434'},
+{titulo:'',precio:'3429',imagen:'https://http2.mlstatic.com/D_NQ_NP_724765-MLA50262139770_062022-O.webp',descripcion:'128 GB iceberg blue 4 GB RAM',stock:1,codigoProducto:'110535'},
+{titulo:'Xiaomi Redmi 7',precio:4199,imagen:'https://http2.mlstatic.com/D_NQ_NP_759672-MLA50181421368_062022-O.webp',descripcion:'16gb Negro',stock:2,codigoProducto:'110618'},
+{titulo:'Motorola G51',precio:2549,imagen:'https://http2.mlstatic.com/D_NQ_NP_959500-MLA50302263673_062022-O.webp',descripcion:'5G 128 GB dorado 4 GB RAM',stock:6,codigoProducto:'110722'},
+{titulo:'Xiaomi Redmi 10C',precio:685,imagen:'https://http2.mlstatic.com/D_NQ_NP_690265-MLA49949612039_052022-O.webp',descripcion:'Dual SIM 64 GB gris grafito 4 GB RAM',stock:1,codigoProducto:'110915'},
+{titulo:'LG K51S',precio:563,imagen:'https://http2.mlstatic.com/D_NQ_NP_787273-MLA43530871636_092020-O.webp',descripcion:'64 GB titan 3 GB RAM',stock:5,codigoProducto:'111047'},
+{titulo:'ZTE Blade A71',precio:359,imagen:'https://http2.mlstatic.com/D_NQ_NP_901421-MLA48476362156_122021-O.webp',descripcion:'64 GB grey 3 GB RAM',stock:1,codigoProducto:'111025'},
+{titulo:'Samsung Galaxy Note10+',precio:259,imagen:'https://http2.mlstatic.com/D_NQ_NP_614614-MLA32445402894_102019-O.webp',descripcion:'256 GB Aura black 12 GB RAM',stock:2,codigoProducto:'112825'}
+]

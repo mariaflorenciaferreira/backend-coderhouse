@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "timestamp": 1665168372368,
+    "productos": []
+  },
+  {
+    "id": 2,
+    "timestamp": 1665178073105,
+    "productos": []
+  },
+  {
+    "id": 3,
+    "timestamp": 1665178678093,
+    "productos": [
+      {
+        "name": "Producto 4",
+        "price": 350,
+        "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSrltw1ui6DG4Igbbblx5cqjNVygwLoy-K6RXrtDyMnd2G7OxRw",
+        "id": "4",
+        "timestamp": 1665178563642
+      }
+    ]
+  }
+]

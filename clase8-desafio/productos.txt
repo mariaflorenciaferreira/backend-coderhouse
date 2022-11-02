@@ -1,0 +1,35 @@
+[
+  [
+    {
+      "titulo": "Motorola",
+      "precio": 50000,
+      "categoría": "smartphone",
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "titulo": "Samsung",
+      "precio": 10000,
+      "categoría": "smartphone",
+      "id": 3
+    },
+    {
+      "titulo": "xiaomi",
+      "precio": "3400",
+      "categoria": "smart",
+      "id": 4
+    },
+    {
+      "precio": 80000,
+      "categoria": "smartphone",
+      "id": 5
+    },
+    {
+      "precio": "34",
+      "categoria": "smart",
+      "id": 6
+    }
+  ]
+]

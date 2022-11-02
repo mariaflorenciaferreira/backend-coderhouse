@@ -1,0 +1,30 @@
+[
+  {
+    "titulo": "Motorola MOTO G22",
+    "precio": "44999",
+    "imagen": "https://www.notebookcheck.org/uploads/tx_nbc2/2686788-l0.jpg",
+    "descripcion": "Memoria interna 128GB ",
+    "codigoProducto": 18,
+    "timestamp": 1661222358849,
+    "id": 1
+  },
+  {
+    "titulo": "xiaomi poco x3",
+    "precio": "84000",
+    "imagen": "https://images.samsung.com/is/image/samsung/p6pim/ar/sm-g990elgaaro/gallery/ar-galaxy-s21-fe-g990-408811-sm-g990elgaaro-thumb-530831979?$320_320_PNG$",
+    "descripcion": "128 GB - Android",
+    "stock": "4",
+    "codigoProducto": 1661290023218,
+    "timestamp": 1661290023215,
+    "id": 2
+  },
+  {
+    "titulo": "iPhone 13 Pro",
+    "precio": "130825",
+    "imagen": "https://buytek.net/wp-content/uploads/2021/10/Iphone-13-Pro.8.png",
+    "descripcion": "256GB Dorado",
+    "codigoProducto": 1661347636032,
+    "timestamp": 1661347636032,
+    "id": 3
+  }
+]

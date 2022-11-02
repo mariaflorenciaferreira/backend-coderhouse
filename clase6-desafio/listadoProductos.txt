@@ -1,0 +1,20 @@
+[
+  {
+    "marca": "Samsung",
+    "precio": 10000,
+    "categoría": "smartphone",
+    "id": 1
+  },
+  {
+    "marca": "Motorola",
+    "precio": 50000,
+    "categoría": "smartphone",
+    "id": 2
+  },
+  {
+    "marca": "Iphone",
+    "precio": 30000,
+    "categoría": "smartphone",
+    "id": 3
+  }
+]

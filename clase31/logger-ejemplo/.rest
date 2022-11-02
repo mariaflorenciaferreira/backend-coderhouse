@@ -1,0 +1,5 @@
+GET http://localhost:4000/suma HTTP/1.1
+
+
+###
+GET http://localhost:4000/sumar?a=1&b=3 HTTP/1.1

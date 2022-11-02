@@ -1,0 +1,25 @@
+POST http://localhost:4000/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"admin4",
+    "password":"admin4"
+
+}
+
+### POST Register
+
+POST http://localhost:4000/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"admin4",
+    "password":"admin4",
+    "email":"A4@gmail.com"
+
+}
+
+### Get all users
+GET http://localhost:4000/users HTTP/1.1
+Content-Type: application/json
+authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYWRtaW40IiwiZW1haWwiOiJBNEBnbWFpbC5jb20ifSwiaWF0IjoxNjY0NjY1Mjg0LCJleHAiOjE2NjQ3NTE2ODR9.0pQOSiqrl53NRfmRVM7Is4cZXUR-koJJlw5sVgO6p8s 

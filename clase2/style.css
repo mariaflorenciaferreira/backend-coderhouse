@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+h1{
+    text-align: center;
+    margin: 20px;
+}
+
+.formSection{
+    margin: 20px;
+}
+
+
+p{
+    margin-bottom: 10px;
+}
+
+.petsContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.pet, .libro{
+    margin: 5px;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    
+}
+
+button{
+    padding: 3px;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "autocannon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "benchmark.js",
+  "scripts": {
+    "test": "node benchmark.js",
+    "start": "0x server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,561 @@
+Microsoft Windows [Versión 10.0.19044.1889]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\Gorila Games>mongo
+MongoDB shell version v5.0.12-rc0
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("bde9abda-a1ed-4fb4-bae9-a657d65f51b3") }
+MongoDB server version: 5.0.12-rc0
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-08-30T19:32:30.070-03:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin     0.000GB
+config    0.000GB
+local     0.000GB
+personas  0.000GB
+> use ecommerce
+switched to db ecommerce
+> db.createCollection('productos')
+{ "ok" : 1 }
+> db.createCollection('mensajes')
+{ "ok" : 1 }
+> show collections
+mensajes
+productos
+> db.productos.insertMany([{titulo:'Moto G60s',precio:'1740',imagen:'https://http2.mlstatic.com/D_NQ_NP_966438-MLA48112811958_112021-O.webp',descripcion:'128 GB aqua 6 GB RAM',stock:'8',codigoProducto:'110211'},
+... {titulo:'Apple iPhone SE',precio:'1682',imagen:'https://http2.mlstatic.com/D_NQ_NP_745945-MLA46552310508_062021-O.webp',descripcion:'(2da generación) 64 GB - Blanco',stock:'3',codigoProducto:'110329'},
+... {titulo:'Samsung Galaxy A03',precio:'4299',imagen:'https://http2.mlstatic.com/D_NQ_NP_737913-MLA49433851234_032022-V.webp',descripcion:'64 GB negro 4 GB RAM',stock:'3',codigoProducto:'110434'},
+... {titulo:'',precio:'3429',imagen:'https://http2.mlstatic.com/D_NQ_NP_724765-MLA50262139770_062022-O.webp',descripcion:'128 GB iceberg blue 4 GB RAM',stock:'1',codigoProducto:'110535'},
+... {titulo:'Xiaomi Redmi 7',precio:'4199',imagen:'https://http2.mlstatic.com/D_NQ_NP_759672-MLA50181421368_062022-O.webp',descripcion:'16gb Negro',stock:'',codigoProducto:'110618'},
+... {titulo:'Motorola G51',precio:'2549',imagen:'https://http2.mlstatic.com/D_NQ_NP_959500-MLA50302263673_062022-O.webp',descripcion:'5G 128 GB dorado 4 GB RAM',stock:'6',codigoProducto:'110722'},
+... {titulo:'Xiaomi Redmi 10C',precio:'685',imagen:'https://http2.mlstatic.com/D_NQ_NP_690265-MLA49949612039_052022-O.webp',descripcion:'Dual SIM 64 GB gris grafito 4 GB RAM',stock:'1',codigoProducto:'110915'},
+... {titulo:'LG K51S',precio:'563',imagen:'https://http2.mlstatic.com/D_NQ_NP_787273-MLA43530871636_092020-O.webp',descripcion:'64 GB titan 3 GB RAM',stock:'5',codigoProducto:'111047'},
+... {titulo:'ZTE Blade A71',precio:'359',imagen:'https://http2.mlstatic.com/D_NQ_NP_901421-MLA48476362156_122021-O.webp',descripcion:'64 GB grey 3 GB RAM',stock:'1',codigoProducto:'111025'}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("631604526e4e2c9cf1986ba2"),
+                ObjectId("631604526e4e2c9cf1986ba3"),
+                ObjectId("631604526e4e2c9cf1986ba4"),
+                ObjectId("631604526e4e2c9cf1986ba5"),
+                ObjectId("631604526e4e2c9cf1986ba6"),
+                ObjectId("631604526e4e2c9cf1986ba7"),
+                ObjectId("631604526e4e2c9cf1986ba8"),
+                ObjectId("631604526e4e2c9cf1986ba9"),
+                ObjectId("631604526e4e2c9cf1986baa")
+        ]
+}
+> db.productos.find().pretty()
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba2"),
+        "titulo" : "Moto G60s",
+        "precio" : "1740",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_966438-MLA48112811958_112021-O.webp",
+        "descripcion" : "128 GB aqua 6 GB RAM",
+        "stock" : "8",
+        "codigoProducto" : "110211"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba3"),
+        "titulo" : "Apple iPhone SE",
+        "precio" : "1682",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_745945-MLA46552310508_062021-O.webp",
+        "descripcion" : "(2da generación) 64 GB - Blanco",
+        "stock" : "3",
+        "codigoProducto" : "110329"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba4"),
+        "titulo" : "Samsung Galaxy A03",
+        "precio" : "4299",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_737913-MLA49433851234_032022-V.webp",
+        "descripcion" : "64 GB negro 4 GB RAM",
+        "stock" : "3",
+        "codigoProducto" : "110434"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba5"),
+        "titulo" : "",
+        "precio" : "3429",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_724765-MLA50262139770_062022-O.webp",
+        "descripcion" : "128 GB iceberg blue 4 GB RAM",
+        "stock" : "1",
+        "codigoProducto" : "110535"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba6"),
+        "titulo" : "Xiaomi Redmi 7",
+        "precio" : "4199",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_759672-MLA50181421368_062022-O.webp",
+        "descripcion" : "16gb Negro",
+        "stock" : "",
+        "codigoProducto" : "110618"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba7"),
+        "titulo" : "Motorola G51",
+        "precio" : "2549",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_959500-MLA50302263673_062022-O.webp",
+        "descripcion" : "5G 128 GB dorado 4 GB RAM",
+        "stock" : "6",
+        "codigoProducto" : "110722"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba8"),
+        "titulo" : "Xiaomi Redmi 10C",
+        "precio" : "685",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_690265-MLA49949612039_052022-O.webp",
+        "descripcion" : "Dual SIM 64 GB gris grafito 4 GB RAM",
+        "stock" : "1",
+        "codigoProducto" : "110915"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba9"),
+        "titulo" : "LG K51S",
+        "precio" : "563",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_787273-MLA43530871636_092020-O.webp",
+        "descripcion" : "64 GB titan 3 GB RAM",
+        "stock" : "5",
+        "codigoProducto" : "111047"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986baa"),
+        "titulo" : "ZTE Blade A71",
+        "precio" : "359",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_901421-MLA48476362156_122021-O.webp",
+        "descripcion" : "64 GB grey 3 GB RAM",
+        "stock" : "1",
+        "codigoProducto" : "111025"
+}
+> db.mensajes.insertMany([{nombreUsuario:'Maria',comentario:'primer comentario',fecha:'050922'},
+... {nombreUsuario:'Florencia',comentario:'segundo comentario',fecha:'030922'},
+... {nombreUsuario:'Jose',comentario:'tercer comentario',fecha:'050822'},
+... {nombreUsuario:'Pedro',comentario:'cuarto comentario',fecha:'180822'},
+... {nombreUsuario:'Marcos',comentario:'quinto comentario',fecha:'150822'},
+... {nombreUsuario:'Susana',comentario:'sexto comentario',fecha:'250822'},
+... {nombreUsuario:'Lucia',comentario:'septimo comentario',fecha:'130822'},
+... {nombreUsuario:'Ana',comentario:'octavo comentario',fecha:'050922'},
+... {nombreUsuario:'Diego',comentario:'noveno comentario',fecha:'040922'},
+... {nombreUsuario:'Ignacio',comentario:'decimo comentario',fecha:'150822'}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6316065e6e4e2c9cf1986bab"),
+                ObjectId("6316065e6e4e2c9cf1986bac"),
+                ObjectId("6316065e6e4e2c9cf1986bad"),
+                ObjectId("6316065e6e4e2c9cf1986bae"),
+                ObjectId("6316065e6e4e2c9cf1986baf"),
+                ObjectId("6316065e6e4e2c9cf1986bb0"),
+                ObjectId("6316065e6e4e2c9cf1986bb1"),
+                ObjectId("6316065e6e4e2c9cf1986bb2"),
+                ObjectId("6316065e6e4e2c9cf1986bb3"),
+                ObjectId("6316065e6e4e2c9cf1986bb4")
+        ]
+}
+> db.mensajes.find().pretty()
+{
+        "_id" : ObjectId("6316065e6e4e2c9cf1986bab"),
+        "nombreUsuario" : "Maria",
+        "comentario" : "primer comentario",
+        "fecha" : "050922"
+}
+{
+        "_id" : ObjectId("6316065e6e4e2c9cf1986bac"),
+        "nombreUsuario" : "Florencia",
+        "comentario" : "segundo comentario",
+        "fecha" : "030922"
+}
+{
+        "_id" : ObjectId("6316065e6e4e2c9cf1986bad"),
+        "nombreUsuario" : "Jose",
+        "comentario" : "tercer comentario",
+        "fecha" : "050822"
+}
+{
+        "_id" : ObjectId("6316065e6e4e2c9cf1986bae"),
+        "nombreUsuario" : "Pedro",
+        "comentario" : "cuarto comentario",
+        "fecha" : "180822"
+}
+{
+        "_id" : ObjectId("6316065e6e4e2c9cf1986baf"),
+        "nombreUsuario" : "Marcos",
+        "comentario" : "quinto comentario",
+        "fecha" : "150822"
+}
+{
+        "_id" : ObjectId("6316065e6e4e2c9cf1986bb0"),
+        "nombreUsuario" : "Susana",
+        "comentario" : "sexto comentario",
+        "fecha" : "250822"
+}
+{
+        "_id" : ObjectId("6316065e6e4e2c9cf1986bb1"),
+        "nombreUsuario" : "Lucia",
+        "comentario" : "septimo comentario",
+        "fecha" : "130822"
+}
+{
+        "_id" : ObjectId("6316065e6e4e2c9cf1986bb2"),
+        "nombreUsuario" : "Ana",
+        "comentario" : "octavo comentario",
+        "fecha" : "050922"
+}
+{
+        "_id" : ObjectId("6316065e6e4e2c9cf1986bb3"),
+        "nombreUsuario" : "Diego",
+        "comentario" : "noveno comentario",
+        "fecha" : "040922"
+}
+{
+        "_id" : ObjectId("6316065e6e4e2c9cf1986bb4"),
+        "nombreUsuario" : "Ignacio",
+        "comentario" : "decimo comentario",
+        "fecha" : "150822"
+}
+> db.productos.estimatedDocumentCount()
+9
+> db.mensajes.estimatedDocumentCount()
+10
+> db.productos.insertOne({titulo:'Samsung Galaxy Note10+',precio:'259',imagen:'https://http2.mlstatic.com/D_NQ_NP_614614-MLA32445402894_102019-O.webp',descripcion:'256 GB Aura black 12 GB RAM',stock:'2',codigoProducto:'112825'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("631607d86e4e2c9cf1986bb5")
+}
+> db.productos.find({precio:{$lt:1000}}).pretty()
+> db.productos.find({precio:{'$lt':1000}})
+> db.productos.find({"precio":{'$lt':1000}}).pretty()
+> db.productos.find().pretty()
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba2"),
+        "titulo" : "Moto G60s",
+        "precio" : "1740",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_966438-MLA48112811958_112021-O.webp",
+        "descripcion" : "128 GB aqua 6 GB RAM",
+        "stock" : "8",
+        "codigoProducto" : "110211"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba3"),
+        "titulo" : "Apple iPhone SE",
+        "precio" : "1682",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_745945-MLA46552310508_062021-O.webp",
+        "descripcion" : "(2da generación) 64 GB - Blanco",
+        "stock" : "3",
+        "codigoProducto" : "110329"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba4"),
+        "titulo" : "Samsung Galaxy A03",
+        "precio" : "4299",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_737913-MLA49433851234_032022-V.webp",
+        "descripcion" : "64 GB negro 4 GB RAM",
+        "stock" : "3",
+        "codigoProducto" : "110434"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba5"),
+        "titulo" : "",
+        "precio" : "3429",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_724765-MLA50262139770_062022-O.webp",
+        "descripcion" : "128 GB iceberg blue 4 GB RAM",
+        "stock" : "1",
+        "codigoProducto" : "110535"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba6"),
+        "titulo" : "Xiaomi Redmi 7",
+        "precio" : "4199",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_759672-MLA50181421368_062022-O.webp",
+        "descripcion" : "16gb Negro",
+        "stock" : "",
+        "codigoProducto" : "110618"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba7"),
+        "titulo" : "Motorola G51",
+        "precio" : "2549",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_959500-MLA50302263673_062022-O.webp",
+        "descripcion" : "5G 128 GB dorado 4 GB RAM",
+        "stock" : "6",
+        "codigoProducto" : "110722"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba8"),
+        "titulo" : "Xiaomi Redmi 10C",
+        "precio" : "685",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_690265-MLA49949612039_052022-O.webp",
+        "descripcion" : "Dual SIM 64 GB gris grafito 4 GB RAM",
+        "stock" : "1",
+        "codigoProducto" : "110915"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986ba9"),
+        "titulo" : "LG K51S",
+        "precio" : "563",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_787273-MLA43530871636_092020-O.webp",
+        "descripcion" : "64 GB titan 3 GB RAM",
+        "stock" : "5",
+        "codigoProducto" : "111047"
+}
+{
+        "_id" : ObjectId("631604526e4e2c9cf1986baa"),
+        "titulo" : "ZTE Blade A71",
+        "precio" : "359",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_901421-MLA48476362156_122021-O.webp",
+        "descripcion" : "64 GB grey 3 GB RAM",
+        "stock" : "1",
+        "codigoProducto" : "111025"
+}
+{
+        "_id" : ObjectId("631607d86e4e2c9cf1986bb5"),
+        "titulo" : "Samsung Galaxy Note10+",
+        "precio" : "259",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_614614-MLA32445402894_102019-O.webp",
+        "descripcion" : "256 GB Aura black 12 GB RAM",
+        "stock" : "2",
+        "codigoProducto" : "112825"
+}
+> db.productos.find({"precio":{$lt:1000}}).pretty()
+> db.productos.find({precio:{$lt:1000}}).pretty()
+> db.productos.drop()
+true
+> show collections
+mensajes
+> db.createCollection('productos')
+{ "ok" : 1 }
+> db.productos.find().pretty()
+> db.productos.insertMany([{titulo:'Moto G60s',precio:'1740',imagen:'https://http2.mlstatic.com/D_NQ_NP_966438-MLA48112811958_112021-O.webp',descripcion:'128 GB aqua 6 GB RAM',stock:'8',codigoProducto:'110211'}, {titulo:'Apple iPhone SE',precio:'1682',imagen:'https://http2.mlstatic.com/D_NQ_NP_745945-MLA46552310508_062021-O.webp',descripcion:'(2da generación) 64 GB - Blanco',stock:'3',codigoProducto:'110329'}, {titulo:'Samsung Galaxy A03',precio:'4299',imagen:'https://http2.mlstatic.com/D_NQ_NP_737913-MLA49433851234_032022-V.webp',descripcion:'64 GB negro 4 GB RAM',stock:'3',codigoProducto:'110434'}, {titulo:'',precio:'3429',imagen:'https://http2.mlstatic.com/D_NQ_NP_724765-MLA50262139770_062022-O.webp',descripcion:'128 GB iceberg blue 4 GB RAM',stock:'1',codigoProducto:'110535'}, {titulo:'Xiaomi Redmi 7',precio:'4199',imagen:'https://http2.mlstatic.com/D_NQ_NP_759672-MLA50181421368_062022-O.webp',descripcion:'16gb Negro',stock:'',codigoProducto:'110618'}, {titulo:'Motorola G51',precio:'2549',imagen:'https://http2.mlstatic.com/D_NQ_NP_959500-MLA50302263673_062022-O.webp',descripcion:'5G 128 GB dorado 4 GB RAM',stock:'6',codigoProducto:'110722'}, {titulo:'Xiaomi Redmi 10C',precio:'685',imagen:'https://http2.mlstatic.com/D_NQ_NP_690265-MLA49949612039_052022-O.webp',descripcion:'Dual SIM 64 GB gris grafito 4 GB RAM',stock:'1',codigoProducto:'110915'}, {titulo:'LG K51S',precio:'563',imagen:'https://http2.mlstatic.com/D_NQ_NP_787273-MLA43530871636_092020-O.webp',descripcion:'64 GB titan 3 GB RAM',stock:'5',codigoProducto:'111047'}, {titulo:'ZTE Blade A71',precio:'359',imagen:'https://http2.mlstatic.com/D_NQ_NP_901421-MLA48476362156_122021-O.webp',descripcion:'64 GB grey 3 GB RAM',stock:'1',codigoProducto:'111025'}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("63160bd76e4e2c9cf1986bb6"),
+                ObjectId("63160bd76e4e2c9cf1986bb7"),
+                ObjectId("63160bd76e4e2c9cf1986bb8"),
+                ObjectId("63160bd76e4e2c9cf1986bb9"),
+                ObjectId("63160bd76e4e2c9cf1986bba"),
+                ObjectId("63160bd76e4e2c9cf1986bbb"),
+                ObjectId("63160bd76e4e2c9cf1986bbc"),
+                ObjectId("63160bd76e4e2c9cf1986bbd"),
+                ObjectId("63160bd76e4e2c9cf1986bbe")
+        ]
+}
+> db.productos.drop()
+true
+> db.createCollection('productos')
+{ "ok" : 1 }
+> db.productos.insertMany([{titulo:'Moto G60s',precio:1740,imagen:'https://http2.mlstatic.com/D_NQ_NP_966438-MLA48112811958_112021-O.webp',descripcion:'128 GB aqua 6 GB RAM',stock:8,codigoProducto:'110211'},
+... {titulo:'Apple iPhone SE',precio:1682,imagen:'https://http2.mlstatic.com/D_NQ_NP_745945-MLA46552310508_062021-O.webp',descripcion:'(2da generación) 64 GB - Blanco',stock:3,codigoProducto:'110329'},
+... {titulo:'Samsung Galaxy A03',precio:4299,imagen:'https://http2.mlstatic.com/D_NQ_NP_737913-MLA49433851234_032022-V.webp',descripcion:'64 GB negro 4 GB RAM',stock:3,codigoProducto:'110434'},
+... {titulo:'',precio:'3429',imagen:'https://http2.mlstatic.com/D_NQ_NP_724765-MLA50262139770_062022-O.webp',descripcion:'128 GB iceberg blue 4 GB RAM',stock:1,codigoProducto:'110535'},
+... {titulo:'Xiaomi Redmi 7',precio:4199,imagen:'https://http2.mlstatic.com/D_NQ_NP_759672-MLA50181421368_062022-O.webp',descripcion:'16gb Negro',stock:2,codigoProducto:'110618'},
+... {titulo:'Motorola G51',precio:2549,imagen:'https://http2.mlstatic.com/D_NQ_NP_959500-MLA50302263673_062022-O.webp',descripcion:'5G 128 GB dorado 4 GB RAM',stock:6,codigoProducto:'110722'},
+... {titulo:'Xiaomi Redmi 10C',precio:685,imagen:'https://http2.mlstatic.com/D_NQ_NP_690265-MLA49949612039_052022-O.webp',descripcion:'Dual SIM 64 GB gris grafito 4 GB RAM',stock:1,codigoProducto:'110915'},
+... {titulo:'LG K51S',precio:563,imagen:'https://http2.mlstatic.com/D_NQ_NP_787273-MLA43530871636_092020-O.webp',descripcion:'64 GB titan 3 GB RAM',stock:5,codigoProducto:'111047'},
+... {titulo:'ZTE Blade A71',precio:359,imagen:'https://http2.mlstatic.com/D_NQ_NP_901421-MLA48476362156_122021-O.webp',descripcion:'64 GB grey 3 GB RAM',stock:1,codigoProducto:'111025'},
+... {titulo:'Samsung Galaxy Note10+',precio:259,imagen:'https://http2.mlstatic.com/D_NQ_NP_614614-MLA32445402894_102019-O.webp',descripcion:'256 GB Aura black 12 GB RAM',stock:2,codigoProducto:'112825'}
+... ])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("63160d876e4e2c9cf1986bbf"),
+                ObjectId("63160d876e4e2c9cf1986bc0"),
+                ObjectId("63160d876e4e2c9cf1986bc1"),
+                ObjectId("63160d876e4e2c9cf1986bc2"),
+                ObjectId("63160d876e4e2c9cf1986bc3"),
+                ObjectId("63160d876e4e2c9cf1986bc4"),
+                ObjectId("63160d876e4e2c9cf1986bc5"),
+                ObjectId("63160d876e4e2c9cf1986bc6"),
+                ObjectId("63160d876e4e2c9cf1986bc7"),
+                ObjectId("63160d876e4e2c9cf1986bc8")
+        ]
+}
+> db.productos.find({precio:{$lt:1000}})
+{ "_id" : ObjectId("63160d876e4e2c9cf1986bc5"), "titulo" : "Xiaomi Redmi 10C", "precio" : 685, "imagen" : "https://http2.mlstatic.com/D_NQ_NP_690265-MLA49949612039_052022-O.webp", "descripcion" : "Dual SIM 64 GB gris grafito 4 GB RAM", "stock" : 1, "codigoProducto" : "110915" }
+{ "_id" : ObjectId("63160d876e4e2c9cf1986bc6"), "titulo" : "LG K51S", "precio" : 563, "imagen" : "https://http2.mlstatic.com/D_NQ_NP_787273-MLA43530871636_092020-O.webp", "descripcion" : "64 GB titan 3 GB RAM", "stock" : 5, "codigoProducto" : "111047" }
+{ "_id" : ObjectId("63160d876e4e2c9cf1986bc7"), "titulo" : "ZTE Blade A71", "precio" : 359, "imagen" : "https://http2.mlstatic.com/D_NQ_NP_901421-MLA48476362156_122021-O.webp", "descripcion" : "64 GB grey 3 GB RAM", "stock" : 1, "codigoProducto" : "111025" }
+{ "_id" : ObjectId("63160d876e4e2c9cf1986bc8"), "titulo" : "Samsung Galaxy Note10+", "precio" : 259, "imagen" : "https://http2.mlstatic.com/D_NQ_NP_614614-MLA32445402894_102019-O.webp", "descripcion" : "256 GB Aura black 12 GB RAM", "stock" : 2, "codigoProducto" : "112825" }
+> db.productos.find({$and[{precio:{$gte:1000}},{precio:{$lte:3000}}]})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:23
+> db.productos.find({$and:[{precio:{'$gte':1000}},{precio:{'$lte':3000}}]}).pretty()
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bbf"),
+        "titulo" : "Moto G60s",
+        "precio" : 1740,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_966438-MLA48112811958_112021-O.webp",
+        "descripcion" : "128 GB aqua 6 GB RAM",
+        "stock" : 8,
+        "codigoProducto" : "110211"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc0"),
+        "titulo" : "Apple iPhone SE",
+        "precio" : 1682,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_745945-MLA46552310508_062021-O.webp",
+        "descripcion" : "(2da generación) 64 GB - Blanco",
+        "stock" : 3,
+        "codigoProducto" : "110329"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc4"),
+        "titulo" : "Motorola G51",
+        "precio" : 2549,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_959500-MLA50302263673_062022-O.webp",
+        "descripcion" : "5G 128 GB dorado 4 GB RAM",
+        "stock" : 6,
+        "codigoProducto" : "110722"
+}
+> db.productos.find({precio:{$gt:3000}}).pretty()
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc1"),
+        "titulo" : "Samsung Galaxy A03",
+        "precio" : 4299,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_737913-MLA49433851234_032022-V.webp",
+        "descripcion" : "64 GB negro 4 GB RAM",
+        "stock" : 3,
+        "codigoProducto" : "110434"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc3"),
+        "titulo" : "Xiaomi Redmi 7",
+        "precio" : 4199,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_759672-MLA50181421368_062022-O.webp",
+        "descripcion" : "16gb Negro",
+        "stock" : 2,
+        "codigoProducto" : "110618"
+}
+> db.productos.find().sort({precio:1}).skip(2).limit(1).pretty()
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc6"),
+        "titulo" : "LG K51S",
+        "precio" : 563,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_787273-MLA43530871636_092020-O.webp",
+        "descripcion" : "64 GB titan 3 GB RAM",
+        "stock" : 5,
+        "codigoProducto" : "111047"
+}
+> db.productos.updateMany({},{$set:{stock:100}})
+{ "acknowledged" : true, "matchedCount" : 10, "modifiedCount" : 10 }
+> db.productos.find().pretty()
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bbf"),
+        "titulo" : "Moto G60s",
+        "precio" : 1740,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_966438-MLA48112811958_112021-O.webp",
+        "descripcion" : "128 GB aqua 6 GB RAM",
+        "stock" : 100,
+        "codigoProducto" : "110211"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc0"),
+        "titulo" : "Apple iPhone SE",
+        "precio" : 1682,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_745945-MLA46552310508_062021-O.webp",
+        "descripcion" : "(2da generación) 64 GB - Blanco",
+        "stock" : 100,
+        "codigoProducto" : "110329"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc1"),
+        "titulo" : "Samsung Galaxy A03",
+        "precio" : 4299,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_737913-MLA49433851234_032022-V.webp",
+        "descripcion" : "64 GB negro 4 GB RAM",
+        "stock" : 100,
+        "codigoProducto" : "110434"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc2"),
+        "titulo" : "",
+        "precio" : "3429",
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_724765-MLA50262139770_062022-O.webp",
+        "descripcion" : "128 GB iceberg blue 4 GB RAM",
+        "stock" : 100,
+        "codigoProducto" : "110535"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc3"),
+        "titulo" : "Xiaomi Redmi 7",
+        "precio" : 4199,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_759672-MLA50181421368_062022-O.webp",
+        "descripcion" : "16gb Negro",
+        "stock" : 100,
+        "codigoProducto" : "110618"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc4"),
+        "titulo" : "Motorola G51",
+        "precio" : 2549,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_959500-MLA50302263673_062022-O.webp",
+        "descripcion" : "5G 128 GB dorado 4 GB RAM",
+        "stock" : 100,
+        "codigoProducto" : "110722"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc5"),
+        "titulo" : "Xiaomi Redmi 10C",
+        "precio" : 685,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_690265-MLA49949612039_052022-O.webp",
+        "descripcion" : "Dual SIM 64 GB gris grafito 4 GB RAM",
+        "stock" : 100,
+        "codigoProducto" : "110915"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc6"),
+        "titulo" : "LG K51S",
+        "precio" : 563,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_787273-MLA43530871636_092020-O.webp",
+        "descripcion" : "64 GB titan 3 GB RAM",
+        "stock" : 100,
+        "codigoProducto" : "111047"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc7"),
+        "titulo" : "ZTE Blade A71",
+        "precio" : 359,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_901421-MLA48476362156_122021-O.webp",
+        "descripcion" : "64 GB grey 3 GB RAM",
+        "stock" : 100,
+        "codigoProducto" : "111025"
+}
+{
+        "_id" : ObjectId("63160d876e4e2c9cf1986bc8"),
+        "titulo" : "Samsung Galaxy Note10+",
+        "precio" : 259,
+        "imagen" : "https://http2.mlstatic.com/D_NQ_NP_614614-MLA32445402894_102019-O.webp",
+        "descripcion" : "256 GB Aura black 12 GB RAM",
+        "stock" : 100,
+        "codigoProducto" : "112825"
+}
+> db.productos.updateMany({precio:{$gt:4000}},{$set:{stock:0}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.productos.deleteMany({precio:{$lt:1000}})
+{ "acknowledged" : true, "deletedCount" : 4 }
+>
+
+
+use admin
+db.createUser({user: "pepe",pwd: "asd456",roles: [{ role: "read", db: "ecommerce" }]})
+
+

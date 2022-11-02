@@ -1,0 +1,14 @@
+API Key 
+SAMKoLjaPGsAiWKanU8gIwhuP
+
+API Key Secret
+bNFhPM09EvfQWf6MTaEhxpX5EqPItOmLuBSxVfRKh1FsT74QGJ
+
+Bearer token
+AAAAAAAAAAAAAAAAAAAAAErPhgEAAAAAt8h1k4gO5Dsx1VYxxAlgzLSpdUE
+
+Client ID
+cTdDWmNkS2ZfbHUzbDQwWTRjdTI6MTpjaQ
+
+Client Secret
+DlRdrKRbv33eT1-xl6lZE1xi8YR6Zf8AkxzDv5cQJyJu56jm20

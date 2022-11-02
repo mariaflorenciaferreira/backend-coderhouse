@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Producto 3",
+    "price": 300,
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSfu3xF4nflSN5usp9T74z_Y7kdpopCvTw98c2s9S8EUxXPvUYO",
+    "id": "3",
+    "timestamp": 1665178466831
+  },
+  {
+    "name": "Producto 4",
+    "price": 350,
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSrltw1ui6DG4Igbbblx5cqjNVygwLoy-K6RXrtDyMnd2G7OxRw",
+    "id": "4",
+    "timestamp": 1665178563642
+  }
+]
