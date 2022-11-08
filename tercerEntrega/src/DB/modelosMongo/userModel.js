@@ -4,10 +4,11 @@ const { string } = require('yargs');
 const userSchema = new mongoose.Schema({
     email: String,
     password: String,
-    nombreCompleto:String,
-    direccion:String,
+    name:String,
+    adress:String,
     edad:String,
-    telefono:String
+    phone:String,
+    pic:String 
 });
 
 const userModel = mongoose.model('User', userSchema);
