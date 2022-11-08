@@ -1,4 +1,4 @@
-const {carritoDao, productosDao} = require('../../daos/carritos/CarritosDaoMongoDb')
+const {carritoDao, productosDao} = require('../../daos/index')
 
 
 const getCarts = async (req, res) => {
