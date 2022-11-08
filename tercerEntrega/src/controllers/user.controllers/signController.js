@@ -33,7 +33,8 @@ const upload=multer({storage})
 // })
 
 const postSign = async (req, res,next) => {
-    const { email, password,name,adress,age,phone,pic } = req.body;
+    const { email, password,name,adress,age,phone } = req.body;
+   
     
     try {
         const user = {
@@ -42,7 +43,7 @@ const postSign = async (req, res,next) => {
         name,
         adress,
         age,
-        phone,
+        phone
         // pic: uploadFile(pic)
         };
         const createUser = new userModel(user);

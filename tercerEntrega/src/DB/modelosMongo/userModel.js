@@ -7,8 +7,8 @@ const userSchema = new mongoose.Schema({
     name:String,
     adress:String,
     edad:String,
-    phone:String,
-    pic:String 
+    phone:String
+    //pic:String 
 });
 
 const userModel = mongoose.model('User', userSchema);

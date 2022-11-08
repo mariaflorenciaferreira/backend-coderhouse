@@ -1,6 +1,7 @@
 const {carritoDao, productosDao} = require('../../daos/index')
 
 
+
 const getCarts = async (req, res) => {
     carritoDao.getAll()
         .then(response => {
@@ -9,6 +10,7 @@ const getCarts = async (req, res) => {
         .catch(err => {
             console.log(err)
         })
+        res.render('carrito');
 }
 
 const getCartById = async (req, res) =>{

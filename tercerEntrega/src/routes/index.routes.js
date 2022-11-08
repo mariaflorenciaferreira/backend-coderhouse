@@ -5,7 +5,7 @@ const loginRouter = require('./login.routes');
 const signUpRouter = require('./signup.routes');
 const logoutRouter = require('./logout.routes');
 const infoRouter=require('./info.routes')
-const randomRouter=require('./random.routes')
+
 const carritoRouter=require('./carrito.routes')
 const productosRouter=require('./producto.routes')
 
@@ -18,7 +18,7 @@ router.get('/', authMiddleware, getHome)
 .use('/signup', signUpRouter)
 .use('/logout', logoutRouter)
 .use('/info', infoRouter)
-.use('/random', randomRouter)
+
 .use('/api/productos',productosRouter)
 .use('/api/carritos',carritoRouter)
 
