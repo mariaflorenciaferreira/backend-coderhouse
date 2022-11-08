@@ -43,7 +43,7 @@ const postSign = async (req, res,next) => {
         adress,
         age,
         phone,
-        pic: uploadFile(pic)
+        // pic: uploadFile(pic)
         };
         const createUser = new userModel(user);
         await createUser.save();
