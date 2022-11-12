@@ -1,5 +1,6 @@
 const {carritoDao, productosDao} = require('../../daos/index')
 const envioMail=require('../../middlewares/mails')
+const envioWpp=require('../../middlewares/whatsapp')
 
 
 const getCarts = async (req, res) => {
@@ -92,6 +93,7 @@ const realizarCompra=async (req,res) => {
 
 
         envioMail()
+        envioWpp()
         return carritoId
 
     } catch (error) {
