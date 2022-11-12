@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { string } = require('yargs');
 
 const userSchema = new mongoose.Schema({
     email: String,
@@ -8,7 +7,6 @@ const userSchema = new mongoose.Schema({
     adress:String,
     edad:String,
     phone:String
-    //pic:String 
 });
 
 const userModel = mongoose.model('User', userSchema);

@@ -1,5 +1,5 @@
 <h1>SIGNUP</h1>
-<form method="POST"  action="/signup">
+<form method="POST"  action="/signup" enctype="multipart/form-data">
   <input type="email" placeholder="email" name="email" />
   <input type="password" placeholder="password" name="password" />
   <input type="text" placeholder="Nombre y Apellido" name="name" />
@@ -7,14 +7,11 @@
   <input type="text" placeholder="Edad" name="age" />
   <input type="text" placeholder="Telefono de contacto" name="phone" />
 
-  <!-- <form method="POST"  enctype="multipart/form-data" action="/uploadfile">
     <label for="file">Cargar imágen</label>
     <input type="file" name="pic">
-    <button type="sumbit" value="Subir archivos">subir</button>
-
-  </form> -->
-
-  <button type="submit">submit</button>
+    
+      <button type="submit">submit</button>
+  </form>
 </form>
 <a href="/login">INGRESAR</a>
 

@@ -11,6 +11,8 @@ const indexRoutes = require('./src/routes/index.routes');
 
 const app = express();
 
+
+
 app.use(
   session({
     secret: process.env.SECRET,
