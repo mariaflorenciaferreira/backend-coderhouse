@@ -1,5 +1,5 @@
 const {carritoDao, productosDao} = require('../../daos/index')
-
+const envioMail=require('../../middlewares/mails')
 
 
 const getCarts = async (req, res) => {
@@ -10,24 +10,23 @@ const getCarts = async (req, res) => {
         .catch(err => {
             console.log(err)
         })
-        res.render('carrito');
+        
 }
 
 const getCartById = async (req, res) =>{
-    let id=req.params
+    let {id}=req.params
 
     try {
         const carritos= await carritoDao.getAll()
-        const carritoId = carritos.find(element => element.id == id)
+        const carritoId =  carritos.find(element => element.id == id)
         
         res.json({carritoId})
+        
         return carritoId
     } catch (error) {
         res.json({error: `Carrito ${id} no existe`})
     }
 }
-
-
 
 const postCart = async (req, res) => {
     carritoDao.saveCart()
@@ -65,9 +64,7 @@ const postProductToCart = async (req, res) => {
 }
 
 const deleteProductToCart = async (req, res) => {
-    const {
-        id
-    } = req.params
+    const {id} = req.params
     const product = req.body
     carritoDao.deleteCartItem(id, product)
         .then(response => {
@@ -79,11 +76,40 @@ const deleteProductToCart = async (req, res) => {
 }
 
 
+
+
+const realizarCompra=async (req,res) => {
+    let {id}=req.params
+
+    try {
+        const carritos= await carritoDao.getAll()
+        const carritoId =  carritos.find(element => element.id == id)
+
+        const productosId=JSON.stringify(carritoId.products)
+        // const productos =await productosDao.getById(productosId)
+
+        res.json(`comprar carrito ${carritoId.id} \n ${productosId}`)
+
+
+        envioMail()
+        return carritoId
+
+    } catch (error) {
+        res.json({error: `Carrito ${id} no existe`})
+    }
+
+
+}
+
+
+
+
 module.exports = {
     getCarts,
     getCartById,
     postCart,
     postProductToCart,
     deleteProductToCart,
-    deleteCart
+    deleteCart,
+    realizarCompra
 }

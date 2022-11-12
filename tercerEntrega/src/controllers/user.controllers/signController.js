@@ -9,16 +9,16 @@ const getSign = (req, res) => {
 };
 
 
-const storage=multer.diskStorage({
-    destination: (req,_file,cb)=>{
-        cb(null, 'uploads')
-    },
-    filename:(req,file,cb)=>{
-        cb(null,`${Date.now() }-${file.originalname}`)
-    }
-})
+// const storage=multer.diskStorage({
+//     destination: (req,_file,cb)=>{
+//         cb(null, 'uploads')
+//     },
+//     filename:(req,file,cb)=>{
+//         cb(null,`${Date.now() }-${file.originalname}`)
+//     }
+// })
 
-const upload=multer({storage})
+// const upload=multer({storage})
 
 
 // const uploadFile= ('/uploadfile',upload.single('pic'),(req,res,next)=>{
@@ -34,7 +34,7 @@ const upload=multer({storage})
 
 const postSign = async (req, res,next) => {
     const { email, password,name,adress,age,phone } = req.body;
-   
+
     
     try {
         const user = {
