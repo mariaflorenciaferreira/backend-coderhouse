@@ -6,6 +6,7 @@ class ProductoMongoDB extends ContenedorMongoDB{
     constructor(){
         super(ProductosModel)
     }
+    
 }
 
 module.exports=ProductoMongoDB

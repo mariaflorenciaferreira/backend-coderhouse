@@ -6,13 +6,16 @@ const{getProducts,
 	postProduct,
 	putProduct,
 	deleteProduct,
-	deleteAllProducts}=require('../controllers/producto.controllers/productos.controller')
+	deleteAllProducts,
+	buscarConCotizacionEnDolares
+	}=require('../controllers/producto.controllers/productos.controller')
 
 const routerProductos=Router()
 
 
 routerProductos.get('/',getProducts)
-routerProductos.get('/:id',getProductById)
+// routerProductos.get('/:id',getProductById)
+routerProductos.get('/:id',buscarConCotizacionEnDolares)
 
 routerProductos.post('/',postProduct)
 

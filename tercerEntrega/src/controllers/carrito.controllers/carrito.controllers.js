@@ -87,13 +87,13 @@ const realizarCompra=async (req,res) => {
         const carritoId =  carritos.find(element => element.id == id)
 
         const productosId=JSON.stringify(carritoId.products)
-        // const productos =await productosDao.getById(productosId)
+        const productos =await productosDao.getById(productosId)
 
         res.json(`comprar carrito ${carritoId.id} \n ${productosId}`)
 
-
-        envioMail()
-        envioWpp()
+        // envioMail()
+        // envioWpp()
+      
         return carritoId
 
     } catch (error) {

@@ -1,5 +1,18 @@
 const {productosDao} =require('../../daos/index')
 
+class Cotizador {
+    static VALOR_DOLAR = 100
+
+    getPrecioSegunMoneda(precio, moneda) {
+        switch (moneda) {
+            case 'USD':
+                return precio * Cotizador.VALOR_DOLAR
+            default:
+                return precio
+        }
+    }
+}
+
 const getProducts=async (req,res)=>{
 	productosDao.getAll()
         .then(response => {
@@ -66,6 +79,7 @@ const deleteAllProducts = async (req, res = response) => {
             console.log(err)
         })
 }
+
 
 module.exports = {
 	getProducts,
