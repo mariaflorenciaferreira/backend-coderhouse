@@ -1,6 +1,5 @@
 import { getDao } from '../factory/productsDaoFactory.js'
-import ProductsMongoDao from '../persistencia/DAOs/ProductsMongoDb.DAO.js' 
-import ProductsFile from '../persistencia/repository/productos.repository.js'
+
 
 class ProductsApi{
 

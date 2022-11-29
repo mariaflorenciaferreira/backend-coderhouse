@@ -4,10 +4,11 @@ const ProductsSchema = new Schema({
   title: String,
   price: Number,
   description: String,
+  image:String,
   stock: Number
 })
 
-const ProductsModel = model('prods', ProductsSchema)
+const ProductsModel = model('products', ProductsSchema)
 
 export default ProductsModel
 

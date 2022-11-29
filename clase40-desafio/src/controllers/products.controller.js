@@ -5,8 +5,8 @@ const apiProducts = new ProductsApi();
 export const getAll = async (req, res) => {
 
     try {
-        let prods = await apiProducts.getAll();
-        res.status(200).json({ prods });
+        let products = await apiProducts.getAll();
+        res.status(200).json({ products });
 
     } catch (error) {
         res.status(500).json({ success: false, error });
