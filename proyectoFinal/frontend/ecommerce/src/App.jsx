@@ -1,17 +1,17 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import './App.css'
+import ProductListPage from './pages/ProductListContainer/ProductListPage'
 
 function App() {
   const [count, setCount] = useState(0)
 
-  fetch('http://localhost:8080/api/productos')
-  .then(resp=>console.log(resp))
 
   return (
     <div className="App">
-      
-    Ecommerce
+
+      <ProductListPage/>
+    
     </div>
   )
 }
