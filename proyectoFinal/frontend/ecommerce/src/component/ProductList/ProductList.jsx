@@ -3,8 +3,11 @@ import Product from "../Product/Product"
 
 const ProductList = ({products=[]}) => {
     return (
-        
-        products.map(prod=><Product key={prod.id} prod={prod} />)
+        <div className="productsSection">
+            {
+                products.map(prod=><Product key={prod.id} prod={prod} />)
+            }
+        </div>
     )
 }
 

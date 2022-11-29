@@ -1,6 +1,5 @@
 import { useState } from 'react'
-
-import './App.css'
+import "./styles.scss"
 import ProductListPage from './pages/ProductListContainer/ProductListPage'
 
 function App() {
@@ -9,8 +8,9 @@ function App() {
 
   return (
     <div className="App">
-
-      <ProductListPage/>
+      <main className="mainContainer">
+        <ProductListPage/>
+      </main>
     
     </div>
   )
