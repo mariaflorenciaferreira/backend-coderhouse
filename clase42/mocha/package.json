@@ -1,0 +1,16 @@
+{
+  "name": "mocha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.test.js",
+    "test-manual":"node index.test.man.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.1.0"
+  }
+}
