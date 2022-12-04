@@ -1,12 +1,18 @@
 import {Schema, model} from 'mongoose' 
 
-const ProductsSchema = new Schema({
-  title: String,
-  price: Number,
-  description: String,
-  image:String,
-  stock: Number
-})
+const ProductsSchema = new Schema(
+  {
+    title: { type: String, required: true, unique: true },
+    desc: { type: String, required: true, },
+    img: { type: String, required: true },
+    categories: { type: Array },
+    size: { type: String },
+    color: { type: String },
+    price: { type: Number, required: true },
+    
+  },
+  { timestamps: true }
+)
 
 const ProductsModel = model('products', ProductsSchema)
 
