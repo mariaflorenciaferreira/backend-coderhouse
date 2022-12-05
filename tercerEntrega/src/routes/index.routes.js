@@ -9,7 +9,7 @@ const randomRouter=require('./random.routes')
 const carritoRouter=require('./carrito.routes')
 const productosRouter=require('./producto.routes')
 
-const {getHome,logout} = require('../controllers/user.controllers/homeController');
+const {getHome} = require('../controllers/user.controllers/homeController');
 
 const router = Router();
 

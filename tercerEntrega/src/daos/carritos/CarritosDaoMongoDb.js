@@ -27,7 +27,7 @@ class CarritoMongoDB extends ContenedorMongoDB{
             const cart = await this.getById(id)
             if (cart) {
                 const producto = await productosDao.getById(product.id)
-                if (producto.name) {cart.products.push({...product})
+                if (producto.name) {cart.products.push({...producto})
                     this.save(cart)
                     return cart
                 } else {
