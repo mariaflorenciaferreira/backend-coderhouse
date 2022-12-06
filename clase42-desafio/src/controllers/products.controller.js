@@ -20,7 +20,7 @@ export const getAll = async (req, res) => {
         res.status(200).json({ prod });
 
     } catch (error) {
-        res.status(500).json({ success: false, err });
+        res.status(500).json({ success: false, error });
     }
     };
 
@@ -31,7 +31,7 @@ export const getAll = async (req, res) => {
         res.status(200).json({ prod: newProduct });
 
     } catch (error) {
-        res.status(500).json({ success: false, err });
+        res.status(500).json({ success: false, error });
     }
     };
 
@@ -44,7 +44,7 @@ export const getAll = async (req, res) => {
         res.status(200).json({ prod: updatedProd });
 
     } catch (error) {
-        res.status(500).json({ success: false, err });
+        res.status(500).json({ success: false, error });
     }
     };
 
@@ -55,7 +55,7 @@ export const getAll = async (req, res) => {
         res.status(200).json({ message: `product id ${id} deleted` });
 
     } catch (error) {
-        res.status(500).json({ success: false, err });
+        res.status(500).json({ success: false, error });
     }
     };
 
@@ -65,7 +65,7 @@ export const getAll = async (req, res) => {
         res.status(200).json({success: true})
         
     } catch (error) {
-        res.status(500).json({ success: false, err });
+        res.status(500).json({ success: false, error });
         
     }
 };
