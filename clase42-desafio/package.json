@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha src/test/mocha/mocha.js",
+    "test:supertest": "node --experimental-vm-modules node_modules/jest/bin/jest.js src/test/supertest ",
     "start": "nodemon app.js"
   },
   "keywords": [],
