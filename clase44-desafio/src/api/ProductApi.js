@@ -1,3 +1,6 @@
+const  productosMap=require('../model/productModel')
+const crypto = require('crypto')
+
 class Producto{
     constructor() {
         this.producto = [];
@@ -46,4 +49,6 @@ class Producto{
 
 
 }
+
+
 module.exports= Producto

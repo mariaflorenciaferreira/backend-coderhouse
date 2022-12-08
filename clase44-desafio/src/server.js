@@ -7,7 +7,14 @@ const app = express()
 app.use(express.static('public'))
 
 
-app.use('/gql', graphqlHTTP(gqlConfig))
+app.use('/gql', graphqlHTTP({
+
+    schema: gqlConfig.schema,
+    rootValue: gqlConfig.rootValue,
+    graphiql: true,
+    
+    })
+)
 
 const PORT = 8000
 app.listen(PORT, err => {

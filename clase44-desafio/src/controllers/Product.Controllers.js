@@ -2,6 +2,15 @@ const { graphqlHTTP } = require( 'express-graphql')
 const { buildSchema } = require( 'graphql')
 const Producto=require('../api/ProductApi')
 
+const api = new Producto()
+
+const rootValue={
+    getProducto:api.getProducto,
+    getProductos:api.getProductos,
+    createProducto:api.createProducto,
+    updateProducto:api.updateProducto,
+    deleteProducto:api.deleteProducto
+}
 
 const schema = buildSchema(`  
     type Producto {
@@ -45,4 +54,8 @@ class GraphQLController {
 }
 
 
-module.exports= new GraphQLController
+module.exports= {
+    schema,
+    rootValue,
+    GraphQLController
+}
