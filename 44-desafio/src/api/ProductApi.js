@@ -1,54 +1,44 @@
-const  productosMap=require('../model/productModel')
-const crypto = require('crypto')
+const { buildSchema } = require( 'graphql')
 
-class Producto{
-    constructor() {
-        this.producto = [];
+const{ getProducto,
+    getProductos,
+    createProducto,
+    updateProducto,
+    deleteProducto} =require('../controllers/Product.Controllers') 
+
+// Schemaa _______________________________________________________
+const schema = buildSchema(`  
+    type Producto {
+        id: ID!
+        nombre: String,
+        precio: Int
     }
-
-    getProducto({ campo, valor }) {
-        const productos = Object.values(productosMap)
-        if (campo && valor) {
-            return productos.filter(p => p[ campo ] == valor);
-        } else {
-            return productos;
-        }
+    input ProductoInput {
+        nombre: String,
+        precio: Int
     }
-
-    getProductos({ id }) {
-        if (!productosMap[ id ]) {
-            throw new Error('Producto not found.');
-        }
-        return productosMap[ id ];
+    type Query {
+        getProducto(id: ID!): Producto,
+        getProductos(campo: String, valor: String): [Producto],
     }
-
-    createProducto({ datos }) {
-        const id = crypto.randomBytes(10).toString('hex');
-        const nuevoProducto = new Producto(id, datos)
-        productosMap[ id ] = nuevoProducto;
-        return nuevoProducto;
+    type Mutation {
+        createProducto(datos: ProductoInput): Producto
+        updateProducto(id: ID!, datos: ProductoInput): Producto,
+        deleteProducto(id: ID!): Producto,
     }
-
-    updateProducto({ id, datos }) {
-        if (!productosMap[ id ]) {
-            throw new Error('Producto not found');
-        }
-        const productoActualizado = new Producto(id, datos)
-        productosMap[ id ] = productoActualizado;
-        return productoActualizado;
-    }
-
-    deleteProducto({ id }) {
-        if (!productosMap[ id ]) {
-            throw new Error('Producto not found');
-        }
-        const productoBorrado = productosMap[ id ]
-        delete productosMap[ id ];
-        return productoBorrado;
-    }
+`)
 
 
+const gqlConfig =  {
+    schema: schema,
+    rootValue: {
+        getProductos,
+        getProducto,
+        createProducto,
+        updateProducto,
+        deleteProducto
+    },
+    graphiql: true
 }
 
-
-module.exports= Producto
+module.exports=gqlConfig

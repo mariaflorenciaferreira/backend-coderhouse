@@ -1,4 +1,4 @@
-// // modelo _____________________________________________________________
+//  modelo _____________________________________________________________
 
 class Producto {
     constructor(id, { nombre, precio }) {
@@ -7,5 +7,6 @@ class Producto {
         this.precio = precio;
     }
 }
-const productoMap = {}
 
+
+module.exports=Producto
