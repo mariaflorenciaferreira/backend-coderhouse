@@ -57,5 +57,5 @@ class GraphQLController {
 module.exports= {
     schema,
     rootValue,
-    GraphQLController
+    GraphQLController 
 }
