@@ -1,4 +1,4 @@
-import CartsMongoDbDao from '../persistencia/DAOs/CartMongoDb.DAO';
+import CartsMongoDbDao from '../persistencia/DAOs/CartMongoDb.DAO.js';
 import DbClient from '../DB/mongo.config.js';
 
 

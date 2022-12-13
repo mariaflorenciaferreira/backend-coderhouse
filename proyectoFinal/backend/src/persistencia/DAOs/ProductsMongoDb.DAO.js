@@ -8,7 +8,7 @@ class ProductsMongoDbDao {
   }
   
   initialize = async () => {
-            await mongoose.connect('mongodb+srv://Florencia:Florencia1@cluster0.apzqpkk.mongodb.net/clase40').then(() =>  console.log('db connected'))
+            await mongoose.connect('mongodb+srv://Florencia:Florencia1@cluster0.apzqpkk.mongodb.net/clase40').then(() =>  console.log('product db connected'))
         }
 
     getAll = async () => {

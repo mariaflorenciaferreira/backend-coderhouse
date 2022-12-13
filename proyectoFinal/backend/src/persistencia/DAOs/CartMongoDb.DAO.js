@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import Carts from '../../models/Cart.Model.js' 
-import {asDto} from '../DTOs/Cart.DTO'
+import {asDto} from '../DTOs/Cart.DTO.js'
 
 class CartsMongoDbDao {
     constructor(){
@@ -8,7 +8,7 @@ class CartsMongoDbDao {
     }
 
     initialize = async () => {
-            await mongoose.connect('mongodb+srv://Florencia:Florencia1@cluster0.apzqpkk.mongodb.net/clase40').then(() =>  console.log('db connected'))
+            await mongoose.connect('mongodb+srv://Florencia:Florencia1@cluster0.apzqpkk.mongodb.net/clase40').then(() =>  console.log('cart db connected'))
         }
 
     getAll = async () => {
