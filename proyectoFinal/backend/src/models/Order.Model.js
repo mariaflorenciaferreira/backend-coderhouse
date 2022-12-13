@@ -1,6 +1,6 @@
 import {Schema, model} from 'mongoose' 
 
-const OrderSchema = new mongoose.Schema(
+const OrderSchema = new Schema(
     {
         userId: { type: String, required: true },
         products: [
