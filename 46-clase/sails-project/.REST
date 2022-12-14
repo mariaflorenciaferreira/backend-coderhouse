@@ -1,0 +1,26 @@
+POST http://localhost:1337/book HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"libro 2",
+    "price":30,
+    "category":"Ficción",
+    "description":"Esto es un libro  interesante",
+    "author":"Emilio"
+}
+
+####
+PUT http://localhost:1337/book/639a4be7fcb912424c54f6a5 HTTP/1.1
+Content-Type: application/json
+
+{
+    "author":"Emilio Nuevo"
+}
+
+####
+DELETE http://localhost:1337/book/639a4c29fcb912424c54f6a6 HTTP/1.1
+Content-Type: application/json
+
+####
+GET http://localhost:1337/book/639a4c29fcb912424c54f6a6 HTTP/1.1
+Content-Type: application/json
