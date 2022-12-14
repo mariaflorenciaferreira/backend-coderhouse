@@ -1,0 +1,35 @@
+####
+POST http://localhost:1337/products HTTP/1.1
+Content-Type: application/json
+
+{
+    "name":"Producto 3",
+    "price":3000,
+    "stock":10,
+    "description":"Nuevo producto"
+    
+}
+
+####
+PUT http://localhost:1337/products/639a616518643a06109202b4 HTTP/1.1
+Content-Type: application/json
+
+{
+    "price":2000,
+    "description":"Aumento de precio"
+
+}
+
+####
+DELETE http://localhost:1337/products/639a624418643a06109202b5 HTTP/1.1
+Content-Type: application/json
+
+####
+GET http://localhost:1337/products/639a614d18643a06109202b3 HTTP/1.1
+Content-Type: application/json
+
+
+# http://localhost:1337/products/create?name=Producto desde URL&price=3000&stock=10&description=Zapatilla Azul
+
+# http://localhost:1337/products/create?name=Producto%20desde%20URL%202&price=1000&stock=10&description=mochila%20verde
+# http://localhost:1337/products/destroy/639a62ef18643a06109202b7
