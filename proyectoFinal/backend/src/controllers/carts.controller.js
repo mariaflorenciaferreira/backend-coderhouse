@@ -44,7 +44,7 @@ export const getAll = async (req, res) => {
         res.status(200).json({ prod: updatedCart });
 
     } catch (error) {
-        res.status(500).json({ success: false, err });
+        res.status(500).json({ success: false, error });
     }
     };
 
@@ -55,7 +55,7 @@ export const getAll = async (req, res) => {
         res.status(200).json({ message: `cart id ${id} deleted` });
 
     } catch (error) {
-        res.status(500).json({ success: false, err });
+        res.status(500).json({ success: false, error });
     }
     };
 
@@ -65,7 +65,7 @@ export const getAll = async (req, res) => {
         res.status(200).json({success: true})
         
     } catch (error) {
-        res.status(500).json({ success: false, err });
+        res.status(500).json({ success: false, error });
         
     }
 };

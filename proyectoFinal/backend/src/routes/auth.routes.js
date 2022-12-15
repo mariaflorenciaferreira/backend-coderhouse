@@ -1,7 +1,9 @@
 import { Router } from 'express'; 
 import CryptoJS from 'crypto-js';
-import User from '../models/User.Model.js'
+import User from '../models/User.Model.js';
+import jwt from 'jsonwebtoken';
 
+const router = Router()
 
 //REGISTER
 router.post("/register", async (req, res) => {
@@ -22,13 +24,13 @@ router.post("/register", async (req, res) => {
     }
 });
 
-
 //LOGIN
-router.post('/login', async (req, res) => {
+
+router.post("/login", async (req, res) => {
     try{
         const user = await User.findOne(
             {
-                userName: req.body.user_name
+                username: req.body.username
             }
         );
 
@@ -55,7 +57,7 @@ router.post('/login', async (req, res) => {
         process.env.JWT_SEC,
             {expiresIn:"3d"}
         );
-
+  
         const { password, ...others } = user._doc;  
         res.status(200).json({...others, accessToken});
 
