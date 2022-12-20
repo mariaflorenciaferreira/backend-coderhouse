@@ -5,7 +5,7 @@ import cors from 'cors'
 
 const app = express()
 
-var allowList = ['http://127.0.0.1:5173', 'http://localhost:5173']
+var allowList = ['http://127.0.0.1:5173', 'http://localhost:5173','http://127.0.0.1:8080','http://localhost:8080']
 
 const corsOptions= (req, callback) => {
     let corsOptions
@@ -20,6 +20,7 @@ const corsOptions= (req, callback) => {
         corsOptions = { origin: true }
     }else {
         corsOptions = { origin: false }
+        console.log('error de cors')
     }
     callback(null, corsOptions)
 }
@@ -27,7 +28,7 @@ const corsOptions= (req, callback) => {
 
 
 app.use(express.static('public'))
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
