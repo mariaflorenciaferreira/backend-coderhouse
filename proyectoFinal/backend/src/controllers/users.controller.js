@@ -11,7 +11,7 @@ export const getAll = async (  req, res) => {
         res.status(200).json({ user });
 
     } catch (error) {
-        // res.status(500).json({ success: false, error });
+        res.status(500).json({ success: false, error });
         console.log(`error getAll users ${error}`)
 
     }
@@ -26,7 +26,7 @@ export const getAll = async (  req, res) => {
         res.status(200).json({ user });
 
     } catch (error) {
-        // res.status(500).json({ success: false, error });
+        res.status(500).json({ success: false, error });
         console.log(`error getById users ${error}`)
 
     }
@@ -39,7 +39,7 @@ export const getAll = async (  req, res) => {
         res.status(200).json({ user: newUser });
 
     } catch (error) {
-        // res.status(500).json({ success: false, error });
+        res.status(500).json({ success: false, error });
         console.log(`error saveUser ${error}`)
 
     }
@@ -54,7 +54,7 @@ export const getAll = async (  req, res) => {
         res.status(200).json({ user: updatedUser });
 
     } catch (error) {
-        // res.status(500).json({ success: false, error });
+        res.status(500).json({ success: false, error });
         console.log(`error updateUser ${error}`)
 
     }
@@ -67,7 +67,7 @@ export const getAll = async (  req, res) => {
         res.status(200).json({ message: `user id ${id} deleted` });
 
     } catch (error) {
-        // res.status(500).json({ success: false, error });
+        res.status(500).json({ success: false, error });
         console.log(`error deleteById user ${error}`)
 
     }
@@ -79,7 +79,7 @@ export const getAll = async (  req, res) => {
         res.status(200).json({success: true})
         
     } catch (error) {
-        // res.status(500).json({ success: false, error });
+        res.status(500).json({ success: false, error });
         console.log(`error deleteAll users ${error}`)
 
         
