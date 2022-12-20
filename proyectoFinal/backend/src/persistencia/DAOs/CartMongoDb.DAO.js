@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import Carts from '../../models/Cart.Model.js' 
+import Products from '../DAOs/ProductsMongoDb.DAO.js'
 import {asDto} from '../DTOs/Cart.DTO.js'
 
 class CartsMongoDbDao {
@@ -24,6 +25,7 @@ class CartsMongoDbDao {
         try {
             const findCart = await Carts.findById({_id})
             return asDto(findCart)
+            
         } catch (error) {
             console.log(error)
         }
@@ -48,6 +50,25 @@ class CartsMongoDbDao {
         }
     }
 
+    postProductToCart=async(_id,product)=>{
+        try {
+            const cart = await Carts.findById(_id)
+            if (cart) {
+                const product = await Products.getById(product.id)
+                if (product.name) {cart.products.push({...product})
+                    this.save(cart)
+                    return cart
+                } else {
+                    return 'Product not found'
+                }
+            } else {
+                return 'Cart not found'
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     deleteById = async (_id) => {
         try {
             await Carts.deleteOne({_id})
@@ -63,6 +84,8 @@ class CartsMongoDbDao {
             console.log(error)
         }
     }
+
+
 
 }
 

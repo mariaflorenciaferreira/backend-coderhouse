@@ -26,6 +26,13 @@ class CartsRepository{
         const dto = await this.dao.updateCart(_id, data)
         return asDto(dto)
     }
+
+    static async postProductToCart(_id, data){
+        const dto = await this.dao.postProductToCart(_id, data)
+        return asDto(dto)
+    }
+
+    
     
     static async deleteById(_id){
         await this.dao.deleteById(_id)

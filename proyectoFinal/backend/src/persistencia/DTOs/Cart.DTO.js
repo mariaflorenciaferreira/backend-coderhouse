@@ -1,7 +1,7 @@
 
 export default class CartsDto {
-    constructor({ title, products}) {
-        this.title = title
+    constructor({ _id, products}) {
+        this._id = _id
         this.products = products
     }
 }

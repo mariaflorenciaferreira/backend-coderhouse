@@ -12,9 +12,9 @@ export const getAll = async (req, res) => {
         // res.status(500).json({ success: false, error });
         console.log(`error getAll carts ${error}`)
     }
-    };
+};
 
-    export const getById = async (req, res) => {
+export const getById = async (req, res) => {
     try {
         const { id } = req.params;
         let cart = await apiCart.getById(id);
@@ -25,9 +25,9 @@ export const getAll = async (req, res) => {
         console.log(`error getById carts ${error}`)
 
     }
-    };
+};
 
-    export const saveCart = async (req, res) => {
+export const saveCart = async (req, res) => {
     try {
         const data = req.body;
         const newCart = await apiCart.saveCart(data);
@@ -38,9 +38,9 @@ export const getAll = async (req, res) => {
         console.log(`error saveCart  ${error}`)
 
     }
-    };
+};
 
-    export const updateCart = async (req, res) => {
+export const updateCart = async (req, res) => {
     try {
         const { id } = req.params;
         const data = req.body;
@@ -53,9 +53,22 @@ export const getAll = async (req, res) => {
         console.log(`error updateCart  ${error}`)
 
     }
-    };
+};
 
-    export const deleteById = async (req, res) => {
+export const postProductToCart = async (req, res) => {
+    const {id} = req.params
+    const product = req.body
+
+    apiCart.postProductToCart(id, product)
+        .then(response => {
+            res.send(response)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+
+export const deleteById = async (req, res) => {
     try {
         const { id } = req.params;
         await apiCart.deleteById(id);
@@ -68,7 +81,7 @@ export const getAll = async (req, res) => {
     }
     };
 
-    export const deleteAll = async (req, res) => {
+export const deleteAll = async (req, res) => {
     try {
         await apiCart.deleteAll()
         res.status(200).json({success: true})

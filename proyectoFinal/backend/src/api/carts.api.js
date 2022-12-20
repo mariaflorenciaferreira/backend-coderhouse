@@ -23,6 +23,10 @@ class CartApi{
         return await this.cartDao.updateCart(_id, data)
     }
 
+    async postProductToCart(_id,product){
+        return await this.cartDao.postProductToCart(_id,product)
+    }
+
     async deleteById(_id){
         return await this.cartDao.deleteById(_id)
     }
