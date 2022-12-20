@@ -3,6 +3,8 @@ import Carts from '../../models/Cart.Model.js'
 import Products from '../DAOs/ProductsMongoDb.DAO.js'
 import {asDto} from '../DTOs/Cart.DTO.js'
 
+const products= new Products()
+
 class CartsMongoDbDao {
     constructor(){
         this.initialize()
@@ -54,8 +56,8 @@ class CartsMongoDbDao {
         try {
             const cart = await Carts.findById(_id)
             if (cart) {
-                const product = await Products.getById(product.id)
-                if (product.name) {cart.products.push({...product})
+                const producto = await products.getById(product.id)
+                if (producto.name) {cart.products.push({...producto})
                     this.save(cart)
                     return cart
                 } else {
