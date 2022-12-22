@@ -58,8 +58,7 @@ class CartsMongoDbDao {
             if (cart) {
                 // console.log(cart)
                 const producto = await products.getById(product.id)
-                
-                // console.log(producto)
+            
 
                 if (producto.title) {
                     

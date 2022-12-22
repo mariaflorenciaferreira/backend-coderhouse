@@ -11,8 +11,8 @@ const Product = ({prod}) => {
                 />
         </div>
 
-            
-                <h5 className="productName"> {prod.title}</h5>
+
+                <span className="productName"> {prod.title}</span>
                 <h3 className="productName"> {prod.description}</h3>
                 <p className="productPrice">${prod.price}</p>
 
