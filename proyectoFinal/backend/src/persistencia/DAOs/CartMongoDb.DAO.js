@@ -56,10 +56,21 @@ class CartsMongoDbDao {
         try {
             const cart = await Carts.findById(_id)
             if (cart) {
+                // console.log(cart)
                 const producto = await products.getById(product.id)
-                if (producto.name) {cart.products.push({...producto})
-                    this.save(cart)
-                    return cart
+                
+                // console.log(producto)
+
+                if (producto.title) {
+                    
+                    const newProd=cart.products.push({...producto})
+                    const data=cart.products
+                    console.log(data)
+
+                    const newCart= await Carts.findByIdAndUpdate({_id},{products:data})
+                    
+                    
+                    return newCart
                 } else {
                     return 'Product not found'
                 }

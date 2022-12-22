@@ -59,6 +59,7 @@ export const postProductToCart = async (req, res) => {
     const {id} = req.params
     const product = req.body
 
+    
     apiCart.postProductToCart(id, product)
         .then(response => {
             res.send(response)
