@@ -23,6 +23,6 @@ const OrderSchema = new Schema(
 
 
 
-const OrderModel = model('Order', OrderSchema)
+const Order = model('Order', OrderSchema)
 
-export default OrderModel
+export default Order
