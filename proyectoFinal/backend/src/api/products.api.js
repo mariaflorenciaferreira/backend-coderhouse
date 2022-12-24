@@ -15,6 +15,12 @@ class ProductsApi{
         return await this.productsDao.getById(_id)
     }
 
+    async getByCategory(categories){
+        return await this.productsDao.getByCategory(categories)
+    }
+
+
+
     async saveProduct(data){
         return await this.productsDao.saveProduct(data)
     }

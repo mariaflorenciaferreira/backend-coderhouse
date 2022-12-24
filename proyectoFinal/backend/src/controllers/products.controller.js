@@ -28,6 +28,24 @@ export const getById = async (req, res) => {
     }
 };
 
+export const getByCategory = async (req, res) => {
+    const rCategory=req.params.category
+    try {
+
+        let prod = await apiProducts.getByCategory(rCategory);
+        res.status(200).json({ prod });
+        
+
+        
+    } catch (error) {
+        console.log(error)
+        console.log(`error getByCategory products ${error}`)
+
+    }
+
+
+};
+
 export const saveProduct = async (req, res) => {
     try {
         const data = req.body;

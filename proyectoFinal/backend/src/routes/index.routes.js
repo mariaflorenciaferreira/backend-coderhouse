@@ -6,7 +6,7 @@ import userRoute from './user.routes.js'
 
 const router = Router()
 
-router.use('/api/productos', productsRoute)
+router.use('/api/products', productsRoute)
 router.use('/api/cart', cartRoute)
 router.use('/api/auth', authRoute);
 router.use('/api/user', userRoute);

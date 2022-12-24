@@ -29,6 +29,29 @@ class ProductsMongoDbDao {
       }
     }
 
+    getByCategory= async (categories) =>{
+
+      const rCategory=categories
+      try {
+
+        let products;
+
+        if(rCategory){
+          products=await Products.find({categories:{
+            $in:[rCategory],
+          }})
+        }else{
+          products=await Products.getAll()
+          
+        }
+        
+        return asDto(products)
+        
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
     saveProduct = async (data) => {
       try {
         const newProduct = new Products(data)
