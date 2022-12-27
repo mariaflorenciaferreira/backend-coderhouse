@@ -38,7 +38,7 @@ export const updateOrder= async (req, res) => {
 export const deleteById = async (req, res) => {
     try {
         await Order.findByIdAndDelete(req.params.id);
-        res.status(200).json("Order has been deleted...");
+        res.status(200).json(`Order ${req.params.id} has been deleted...`);
     } catch (error) {
         res.status(500).json(error);
         console.log(`error deleteById ${error}`)
@@ -51,7 +51,13 @@ export const deleteById = async (req, res) => {
 export const getById = async (req, res) => {
     try {
         const orders = await Order.find({ userId: req.params.userId });
-        res.status(200).json(orders);
+        
+        if(orders.length>0){
+            res.status(200).json(orders);
+        }else{
+            res.json(`User ${req.params.userId} has 0 orders`);
+
+        }
     } catch (error) {
         res.status(500).json(error);
         console.log(`error getById ${error}`)
@@ -68,7 +74,7 @@ export const getAll = async (req, res) => {
     } catch (error) {
         res.status(500).json(error);
         console.log(`error getAll ${error}`)
-
+        
     }
 };
 
