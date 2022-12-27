@@ -5,7 +5,7 @@ import { saveOrder,updateOrder,deleteById,getById,getAll} from '../controllers/o
 const router = Router()
 
 router.get("/", verifyTokenAndAdmin, getAll);
-router.post("/", verifyToken,saveOrder);
+router.post("/save", verifyToken,saveOrder);
 router.put("/:id", verifyTokenAndAdmin,updateOrder);
 router.delete("/:id", verifyTokenAndAdmin,deleteById);
 router.get("/find/:userId", verifyTokenAndAuthorization, getById);
