@@ -16,11 +16,11 @@ class UsersApi{
     }
 
     async saveUser(data){
-        return await this.userDao.saveProduct(data)
+        return await this.userDao.saveUser(data)
     }
 
     async updateUser(_id, data){
-        return await this.userDao.updateProduct(_id, data)
+        return await this.userDao.updateUser(_id, data)
     }
 
     async deleteById(_id){

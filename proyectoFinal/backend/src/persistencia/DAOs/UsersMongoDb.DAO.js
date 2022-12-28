@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import Users from '../../models/User.Model.js' 
 import {asDto} from '../DTOs/Users.DTO.js'
+import dotenv from 'dotenv/config'
 
 class UsersMongoDbDao {
   constructor(){
@@ -8,7 +9,7 @@ class UsersMongoDbDao {
   }
   
   initialize = async () => {
-            await mongoose.connect('mongodb+srv://Florencia:Florencia1@cluster0.apzqpkk.mongodb.net/clase40').then(() =>  console.log('user db connected'))
+            await mongoose.connect(process.env.URL_CONNECTION).then(() =>  console.log('user db connected'))
         }
 
     getAll = async () => {

@@ -11,7 +11,6 @@ router.use('/api/products', productsRoute)
 router.use('/api/cart', cartRoute)
 router.use('/api/auth', authRoute);
 router.use('/api/user', userRoute);
-router.use('/api/user', userRoute);
 router.use('/api/order', orderRoute);
 
 export default router;

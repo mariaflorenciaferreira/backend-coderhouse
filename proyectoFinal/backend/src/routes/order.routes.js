@@ -7,7 +7,7 @@ const router = Router()
 router.get("/", verifyTokenAndAdmin, getAll);
 router.post("/save", verifyToken,saveOrder);
 router.put("/:id", verifyTokenAndAdmin,updateOrder);
-router.delete("/:id", verifyTokenAndAdmin,deleteById);
 router.get("/find/:userId", verifyTokenAndAuthorization, getById);
+router.delete("/:id", verifyTokenAndAdmin,deleteById);
 
 export default router;

@@ -1,10 +1,10 @@
 import { MongoClient } from 'mongodb';
-
+import dotenv from 'dotenv/config'
 
 
 export default class DbClient {
     constructor() {
-        this.cliente = new MongoClient('mongodb+srv://Florencia:Florencia1@cluster0.apzqpkk.mongodb.net/clase40', {
+        this.cliente = new MongoClient(process.env.URL_CONNECTION, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         });
