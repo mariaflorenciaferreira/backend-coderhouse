@@ -4,6 +4,7 @@ import cartRoute from './cart.routes.js'
 import authRoute from './auth.routes.js' 
 import userRoute from './user.routes.js' 
 import orderRoute from './order.routes.js'
+import msgRoute from './message.routes.js'
 
 const router = Router()
 
@@ -12,5 +13,6 @@ router.use('/api/cart', cartRoute)
 router.use('/api/auth', authRoute);
 router.use('/api/user', userRoute);
 router.use('/api/order', orderRoute);
+router.use('/api/messages', msgRoute);
 
 export default router;
