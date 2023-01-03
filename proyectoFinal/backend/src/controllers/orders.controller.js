@@ -1,12 +1,48 @@
 import Order from '../models/Order.Model.js'
 
+import 'dotenv/config'
+import { createTransport } from 'nodemailer';
+
+
+// servicio mail
+
+const TEST_MAIL = process.env.TEST_MAIL
+const PASSWORD= process.env.PASSWORD
+
+const transporter = createTransport({
+    service: 'gmail',
+    port: 587,
+    auth: {
+        user: TEST_MAIL,
+        pass: PASSWORD
+    }
+});
+
+
+
 
 //CREATE
 export const saveOrder = async (req, res) => {
     const newOrder = new Order(req.body);
 
+    const mailOptions = {
+        from: 'Servidor Node.js',
+        to: TEST_MAIL,
+        subject: `ORDEN DE COMPRA #${newOrder._id}`,
+        html: `<h1>Realizaste la compra en <span> e-commerce</span></h1> <div> <h3>Detalle de tu compra</h3> <p>${newOrder.products}</p></div>`,
+        attachments:[
+            {
+                path:'https://raw.githubusercontent.com/andris9/Nodemailer/master/assets/nm_logo_200x136.png'
+            }
+        ]
+    } 
+
     try {
         const savedOrder = await newOrder.save();
+
+        const info = await transporter.sendMail(mailOptions)
+        console.log(info)
+        
         res.status(200).json(savedOrder);
     } catch (error) {
         res.status(500).json(error);

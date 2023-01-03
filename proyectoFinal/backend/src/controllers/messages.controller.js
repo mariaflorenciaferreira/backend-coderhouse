@@ -60,7 +60,7 @@ export const deleteById = async (req, res) => {
         console.log(`error deleteById msg ${error}`)
 
     }
-    };
+};
 
 export const deleteAll = async (req, res) => {
     try {
