@@ -3,12 +3,52 @@ import indexRoute from './src/routes/index.routes.js'
 import 'dotenv/config'
 import cors from 'cors'
 
-//inicio  intento de chat
-// import { createServer } from 'http'
-// import { Server, Socket } from 'socket.io'
 
-// const httpServer = createServer();
-// const io = new Server(httpServer);
+
+
+
+
+
+//inicio   chat
+import { createServer } from 'http'
+import { Server, Socket } from 'socket.io'
+
+const httpServer = createServer();
+const io = new Server(httpServer);
+
+
+io.on("connection", async socket => {
+	const Chats = new Chat();
+	let mensajesChat = await Chats.getAll();
+	logger.info("Se contectó un usuario");
+
+	const mensaje = {
+		mensaje: "ok",
+		mensajesChat
+	};
+
+	socket.emit("mensaje-servidor", mensaje);
+
+	socket.on("mensaje-nuevo", async (msg, cb) => {
+		console.log(mensajesChat);
+
+		mensajesChat.push(msg);
+		console.log(mensajesChat);
+		const mensaje = {
+			mensaje: "mensaje nuevo",
+			mensajesChat
+		};
+
+		const id = new Date().getTime();
+		io.sockets.emit("mensaje-servidor", mensaje);
+		cb(id);
+		await Chats.save({
+			id,
+			mail: msg.mail,
+			msg: msg.msg
+		});
+	});
+});
 
 
 // io.on('connection',async (socket)=>{

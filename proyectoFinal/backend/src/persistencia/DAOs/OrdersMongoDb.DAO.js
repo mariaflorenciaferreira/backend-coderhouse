@@ -1,5 +1,7 @@
 import mongoose from 'mongoose'
 import Orders from '../../models/Order.Model.js' 
+import Carts from '../../models/Cart.Model.js' 
+import Products from '../DAOs/ProductsMongoDb.DAO.js'
 import {asDto} from '../DTOs/Order.DTO.js'
 import dotenv from 'dotenv/config'
 
@@ -66,6 +68,37 @@ class OrdersMongoDbDao {
       console.log(error)
     }
   }
+
+  // getProdData=async()=>{
+  //   try {
+  //     const cart = await Carts.findById(_id)
+  //     if (cart) {
+  //         // console.log(cart)
+  //         const producto = await products.getById(product.id)
+      
+
+  //         if (producto.title) {
+              
+  //             const productData={
+  //               title:producto.title,
+  //               price:producto.price
+  //             }
+  //             const data=cart.products
+  //             console.log(productData)
+
+              
+              
+  //             return productData
+  //         } else {
+  //             return 'Product not found'
+  //         }
+  //     } else {
+  //         return 'Cart not found'
+  //     }
+  // } catch (error) {
+  //     console.log(error)
+  // }
+  // }
 }
 
 

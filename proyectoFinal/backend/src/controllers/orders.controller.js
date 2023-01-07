@@ -1,5 +1,5 @@
 import Order from '../models/Order.Model.js'
-
+import Products from '../persistencia/DAOs/ProductsMongoDb.DAO.js'
 import 'dotenv/config'
 import { createTransport } from 'nodemailer';
 
@@ -25,6 +25,9 @@ const transporter = createTransport({
 export const saveOrder = async (req, res) => {
     const newOrder = new Order(req.body);
 
+    // const prodTitle= Products.getById(newOrder.products)
+    console.log(newOrder.products)
+
     const mailOptions = {
         from: 'Servidor Node.js',
         to: TEST_MAIL,
@@ -40,8 +43,9 @@ export const saveOrder = async (req, res) => {
     try {
         const savedOrder = await newOrder.save();
 
-        const info = await transporter.sendMail(mailOptions)
-        console.log(info)
+        // const info = await transporter.sendMail(mailOptions)
+        // console.log(info)
+        console.log(savedOrder)
         
         res.status(200).json(savedOrder);
     } catch (error) {
