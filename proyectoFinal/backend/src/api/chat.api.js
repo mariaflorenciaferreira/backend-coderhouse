@@ -16,11 +16,11 @@ class ChatsApi{
     }
 
     async saveChat(data){
-        return await this.chatsDao.saveProduct(data)
+        return await this.chatsDao.saveChat(data)
     }
 
     async updateChat(_id, data){
-        return await this.chatsDao.updateProduct(_id, data)
+        return await this.chatsDao.updateChat(_id, data)
     }
 
     async deleteById(_id){

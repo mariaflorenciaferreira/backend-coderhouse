@@ -5,10 +5,6 @@ import cors from 'cors'
 
 
 
-
-
-
-
 //inicio   chat
 import { createServer } from 'http'
 import { Server, Socket } from 'socket.io'
@@ -49,31 +45,6 @@ io.on("connection", async socket => {
 		});
 	});
 });
-
-
-// io.on('connection',async (socket)=>{
-//     console.log('usuario conectado')
-    
-//     // cargar comentarios
-
-//     const comentarios= await  DbComentarios.getAllComments()
-
-//     const listadoComentarios={
-//         mensaje:'listado comentarios disponible',
-//         comentarios
-//     }
-
-//     io.emit('comentarios',listadoComentarios)
-    
-//     // nuevo comentario
-//     socket.on('nuevo-comentario',nuevoComentario=>{
-//         console.log('se agrego un nuevo comentario');
-//         DbComentarios.save(nuevoComentario)
-//         io.emit('comentarios',listadoComentarios)
-        
-//     })
-    
-// })
 
 
 // fin intento de chat
